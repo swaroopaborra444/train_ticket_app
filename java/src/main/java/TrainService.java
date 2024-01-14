@@ -41,4 +41,7 @@ public class TrainService {
             }
         }
     }
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
 }
