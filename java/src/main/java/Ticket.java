@@ -17,13 +17,12 @@ public class Ticket {
         this.userEmail = userEmail;
         this.price = price;
         this.section = section;
-        // Assume seat allocation logic here
         this.seat = allocateSeat();
     }
 
     private String allocateSeat() {
-        // Implement logic to allocate a seat in the specified section
-        return "A1"; // Placeholder, actual logic would vary
+        
+        return section + "1";
     }
 
     // Getters
