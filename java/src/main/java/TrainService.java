@@ -6,22 +6,39 @@ public class TrainService {
 
     public void purchaseTicket(String from, String to, String userFirstName, String userLastName,
                                 String userEmail, int price, String section) {
-        // Implement logic to create and store a new ticket
+        Ticket ticket = new Ticket(from, to, userFirstName, userLastName, userEmail, price, section);
+        tickets.add(ticket);
     }
 
     public Ticket getReceiptDetails(String userEmail) {
-        // Implement logic to retrieve and return receipt details for the user
+        for (Ticket ticket : tickets) {
+            if (ticket.getUserEmail().equals(userEmail)) {
+                return ticket;
+            }
+        }
+        return null; // User not found
     }
 
     public List<String> getUsersBySection(String section) {
-        // Implement logic to retrieve and return users and their seats for the specified section
+        List<String> userSeats = new ArrayList<>();
+        for (Ticket ticket : tickets) {
+            if (ticket.getSection().equals(section)) {
+                userSeats.add(ticket.getUserFirstName() + " " + ticket.getUserLastName() + " - " + ticket.getSeat());
+            }
+        }
+        return userSeats;
     }
 
     public void removeUser(String userEmail) {
-        // Implement logic to remove a user from the train
+        tickets.removeIf(ticket -> ticket.getUserEmail().equals(userEmail));
     }
 
     public void modifyUserSeat(String userEmail, String newSeat) {
-        // Implement logic to modify a user's seat
+        for (Ticket ticket : tickets) {
+            if (ticket.getUserEmail().equals(userEmail)) {
+                ticket.setSeat(newSeat);
+                break;
+            }
+        }
     }
 }
