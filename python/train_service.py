@@ -1,3 +1,21 @@
+class Ticket:
+    def __init__(self, from_location, to_location, user_first_name, user_last_name,
+                 user_email, price, section):
+        self.from_location = from_location
+        self.to_location = to_location
+        self.user_first_name = user_first_name
+        self.user_last_name = user_last_name
+        self.user_email = user_email
+        self.price = price
+        self.section = section
+        self.seat = self.allocate_seat()
+
+    def allocate_seat(self):
+        # Actual seat allocation logic can involve checking availability and assigning a seat.
+        # For simplicity, let's assume a sequential seat allocation.
+        return f"{self.section}1"
+
+
 class TrainService:
     def __init__(self):
         self.tickets = []
