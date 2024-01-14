@@ -21,7 +21,7 @@ public class Ticket {
     }
 
     private String allocateSeat() {
-        
+        //lets take a Sequential seat allocation
         return section + "1";
     }
 
