@@ -16,7 +16,7 @@ public class Main {
         }
 
         trainService.removeUser("john.doe@example.com");
-        trainService.modifyUserSeat("jane.doe@example.com", "A12");
+        trainService.modifyUserSeat("jane.doe@example.com", "B12");
 
         List<String> usersInSectionB = trainService.getUsersBySection("B");
         System.out.println("Users in Section B after modifications:");
