@@ -13,7 +13,7 @@ public class TrainService {
     public Ticket getReceiptDetails(String userEmail) {
         for (Ticket ticket : tickets) {
             if (ticket.getUserEmail().equals(userEmail)) {
-                return ticket;
+                return tickets;
             }
         }
         return null; // User not found
