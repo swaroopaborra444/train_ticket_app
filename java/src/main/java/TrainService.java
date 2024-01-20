@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+package main.java;
 
 public class TrainService {
     private List<Ticket> tickets = new ArrayList<>();
